@@ -1,1 +1,165 @@
-[]
+[
+  {
+    "description": "As a user \nI want to login to my account\nSo that i can use my dashboard",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-feature;sucessful-login",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Sucessful Login",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I navigated to the facebook page",
+            "match": {
+              "location": "features\\step_definitions\\login-steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1178699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I validate the title of the page",
+            "match": {
+              "location": "features\\step_definitions\\login-steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 345299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "I enter username as \"testuser\"",
+            "match": {
+              "location": "features\\step_definitions\\login-steps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 528899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I enter password as \"testpassword\"",
+            "match": {
+              "location": "features\\step_definitions\\login-steps.ts:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 376400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I click on the login button",
+            "match": {
+              "location": "features\\step_definitions\\login-steps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 408100
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-feature;succefull-login-using-different-credentials",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "Succefull login using different credentials",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I navigated to the facebook page",
+            "match": {
+              "location": "features\\step_definitions\\login-steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 317300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I validate the title of the page",
+            "match": {
+              "location": "features\\step_definitions\\login-steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 319599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "I enter username as \"testuser1\"",
+            "match": {
+              "location": "features\\step_definitions\\login-steps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 767400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I enter password as \"testpassword1\"",
+            "match": {
+              "location": "features\\step_definitions\\login-steps.ts:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 543200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "I click on the login button",
+            "match": {
+              "location": "features\\step_definitions\\login-steps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 359699
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-feature",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login Feature",
+    "tags": [],
+    "uri": "features\\login.feature"
+  }
+]
