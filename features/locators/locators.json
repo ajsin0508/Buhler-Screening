@@ -1,0 +1,12 @@
+{
+
+    "LoginPage":{
+
+        
+        "emailInput":"input[name='email']",
+        "passwordInput":"input[name='pass']",
+        "loginButton":"button[name='login']"
+    }
+
+
+}

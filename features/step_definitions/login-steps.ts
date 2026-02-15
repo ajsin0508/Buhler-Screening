@@ -1,51 +1,36 @@
-  import { Given, When, Then } from '@cucumber/cucumber';
-  import { chromium, expect } from '@playwright/test';
-  import{Page, Browser} from 'playwright';
-
- export let page: Page;
- export let browser: Browser;
-
+import { Given, When, Then } from '@cucumber/cucumber';
+import { expect } from '@playwright/test';
+import { CustomWorld } from '../hooks/world';
 
   
-  Given('I navigated to the facebook page', async function () {
-          //console.log('I navigated to the facebook page');
-          browser = await chromium.launch({
-            headless: false
-          });
-          page = await browser.newPage();
-          await page.goto('https://www.facebook.com/');
-          });
-           
+Given('I navigated to the facebook page', async function (this: CustomWorld) {
+       await this.page.goto('https://www.facebook.com/login/');
+});
 
-   When('I validate the title of the page', async function () {
-        // console.log('I validate the title of the page');
-        const title =await page.title();
-         expect(title).toBe('Facebook  log in or sign up');
-         console.log('Title of the page is ' + title);
-         });
+When('I validate the title of the page', async function (this: CustomWorld) {
+       const title = await this.page.title();
+       expect(title).toMatch(/Facebook - log in or sign up|Log in to Facebook/);
+       console.log('Title of the page is ' + title);
+});
 
- 
 
-   Then('I enter username as {string}', async function (string) {
-          // console.log('I enter username as ' + string);
-          await page.fill('input[name="email"]', string);
-         });
+Then('I enter username as {string}', async function (this: CustomWorld, username: string) {
+       if (!this.pagefixtures) throw new Error('Page fixtures not initialized');
+       await this.pagefixtures.loginPage.enterUsername(username);
+});
 
-  
 
-  Then('I enter password as {string}', async function (string) {
-         // console.log('I enter password as ' + string);
-            await page.fill('input[name="pass"]', string);
-         });
+Then('I enter password as {string}', async function (this: CustomWorld, password: string) {
+       if (!this.pagefixtures) throw new Error('Page fixtures not initialized');
+       await this.pagefixtures.loginPage.enterPassword(password);
+});
 
-   
 
-  Then('I click on the login button', async function () {
-         //console.log('I click on the login button');
-            await page.click('button[name="login"]');
-            await page.close();
-            await browser.close();
-         });
+Then('I click on the login button', async function (this: CustomWorld) {
+       if (!this.pagefixtures) throw new Error('Page fixtures not initialized');
+       // Implement clickLoginButton in LoginPage if not present
+       await this.pagefixtures.loginPage.clickLoginButton();
+});
 
 
 
